@@ -10,9 +10,13 @@ import java.util.stream.StreamSupport;
 
 public class StreamsIteratorTest {
 
+    private static final int WORDS_LENGTH = 4;
+
+
     public static void main(String[] args) {
 
-        var myGeneratingStream = Stream.generate(() -> RandomStringUtils.randomAlphabetic(4));
+        var myGeneratingStream = Stream
+                .generate(() -> RandomStringUtils.randomAlphabetic(WORDS_LENGTH));
 
         var myGeneratingStreamIterator = myGeneratingStream.iterator();
 
