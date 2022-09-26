@@ -14,7 +14,7 @@ import java.util.stream.StreamSupport;
 @Slf4j
 public class StreamsIteratorTest {
 
-    private static final int WORDS_LENGTH = 4;
+    private static final int WORD_LENGTH = 4;
 
 
     public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class StreamsIteratorTest {
 
     private static void generateInfiniteStream() {
         var myGeneratingStream = Stream
-                .generate(() -> RandomStringUtils.randomAlphabetic(WORDS_LENGTH));
+                .generate(() -> RandomStringUtils.randomAlphabetic(WORD_LENGTH));
 
         var myGeneratingStreamIterator = myGeneratingStream.iterator();
 
