@@ -7,14 +7,19 @@ import java.util.Spliterators;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-
+/**
+ * Test for generating infinite stream and it's processing
+ */
 public class StreamsIteratorTest {
 
     private static final int WORDS_LENGTH = 4;
 
 
     public static void main(String[] args) {
+        generateInfiniteStream();
+    }
 
+    private static void generateInfiniteStream() {
         var myGeneratingStream = Stream
                 .generate(() -> RandomStringUtils.randomAlphabetic(WORDS_LENGTH));
 
@@ -24,6 +29,7 @@ public class StreamsIteratorTest {
                 .stream(Spliterators.spliteratorUnknownSize(myGeneratingStreamIterator, Spliterator.ORDERED), false);
 
         System.out.println("MyStream reference: " + myStream);
-        myStream.forEach(i -> System.out.println("Item: " + i));
+        myStream.limit(10)
+                .forEach(i -> System.out.println("Item: " + i));
     }
 }
