@@ -1,5 +1,6 @@
 package cz.rk.examples;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.Spliterator;
@@ -10,10 +11,10 @@ import java.util.stream.StreamSupport;
 /**
  * Test for generating infinite stream and it's processing
  */
+@Slf4j
 public class StreamsIteratorTest {
 
     private static final int WORDS_LENGTH = 4;
-
 
     public static void main(String[] args) {
         generateInfiniteStream();
@@ -28,8 +29,8 @@ public class StreamsIteratorTest {
         var myStream = StreamSupport
                 .stream(Spliterators.spliteratorUnknownSize(myGeneratingStreamIterator, Spliterator.ORDERED), false);
 
-        System.out.println("MyStream reference: " + myStream);
+        log.info("MyStream reference: " + myStream);
         myStream.limit(10)
-                .forEach(i -> System.out.println("Item: " + i));
+                .forEach(i -> log.info("Item: " + i));
     }
 }
