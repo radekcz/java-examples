@@ -16,6 +16,7 @@ public class StreamsIteratorTest {
 
     private static final int WORDS_LENGTH = 4;
 
+
     public static void main(String[] args) {
         generateInfiniteStream();
     }
