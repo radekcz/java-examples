@@ -12,7 +12,7 @@ import java.util.stream.StreamSupport;
  * Test for generating infinite stream and it's processing
  */
 @Slf4j
-public class StreamsIteratorTest {
+public class StreamIterator {
 
     private static final int WORD_LENGTH = 4;
 
